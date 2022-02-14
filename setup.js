@@ -35,7 +35,7 @@ function draw()
     if(diff)
     {
         ball.velY *= -1;
-        ball.velX *= diff;
+        ball.velX -= diff * 0.1;
     }
     
     

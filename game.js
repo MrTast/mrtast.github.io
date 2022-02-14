@@ -48,7 +48,7 @@ class Ball
         this.y = y;
         this.width = width;
         this.velX = 0.0;
-        this.velY = -1.0;
+        this.velY = -3.0;
     }
 
     render()
@@ -62,11 +62,15 @@ class Ball
        this.x += this.velX;
        this.y += this.velY;
 
-       if(this.x - this.width <= 0)
+       if((this.x - this.width / 2 )<= 0)
        {
            this.velX *= -1;
        }
-       this.x = constrain(this.x, 0, canvaswidth - this.width);
+       if((this.x + this.width / 2) >= canvaswidth)
+       {
+           this.velX *= -1;
+       }
+       
     }
 }
 
